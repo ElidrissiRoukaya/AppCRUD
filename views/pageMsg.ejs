@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+
+    <link rel="stylesheet" href="styleMsg.css">
+</head>
+<body>
+  <nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fas fa-bars"></i>
+		</label>
+		<label class="logo">Learn Application</label>
+		<ul>
+			
+			<li><a href="/admin" method="post">Page Admin</a></li>
+			<li> 
+                <a href="/addC" method="post">Ajouter un cours</a></li>
+            
+                
+			<li><a href="/Msg" >Boite de réception</a></li>
+		</ul>
+	</nav>
+
+        
+
+    
+  <table id="course">
+
+    <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Sujet</th>
+        <th>Message</th>
+      </tr>
+      
+        <tr>
+            <% contact.forEach((item)=>
+            { %>
+            <td><%=item.nom %></td>
+            <td><%=item.email %></td>
+            <td><%=item.sujet%></td>
+            <td><%=item.message%></td>
+
+            
+            </tr>
+            <% }) %>
+          
+          
+        
+         
+  </table>
+
+
+</body>

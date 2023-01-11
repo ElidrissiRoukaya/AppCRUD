@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<head>
+          <link rel="stylesheet" href="styleAddc.css">
+</head>
+<body>
+
+  <nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+		<i class="fas fa-bars"></i>
+		</label>
+		<label class="logo">Learn Application</label>
+		<ul>
+			
+			<li><a href="/admin" method="post">Page Admin</a></li>
+			<li><a href="/addC" method="post">Ajouter un cours</a></li>          
+			<li><a href="/Msg" >Boite de réception</a></li>
+
+		</ul>
+	</nav>
+    
+    <div>
+        <form action="/addC" method="post">
+        
+       
+        <label for="fname">Professeur</label>
+        <input type="text" id="Prof" name="Prof" placeholder="nom du prof.."  required="true">
+    
+        <label for="lname">Cours</label>
+        <input type="text" id="Cours" name="Cours" placeholder="nom du cours.."  required="true">
+    
+        <label for="type du cours">Nbr de chapitres</label>
+        <input type="text" id="NmrChapitre" name="NmrChapitre" placeholder="Nbr de chapitres"  required="true">
+      
+        <input type="submit" value="Ajouter cours">
+      
+      </form>
+    </div>
+    
+
+    
+    <table id="course">
+        <tr>
+        
+          <th>Professeur</th>
+          <th>Cours</th>
+          <th>Nmb de Chapitres</th>
+          <th colspan="2">actions</th> 
+         
+        </tr>
+       
+       
+          <tr>
+
+            <% bdCourse.forEach((item)=>
+            { %>
+             
+            <td><%=item.Prof %></td>
+            <td><%=item.Cours %></td>
+            <td><%=item.NmrChapitre%></td>
+            <td><a  href="/editcourse/<%= item.id %>"> <img src="/edit-icon.jpg" width="24" height="24" >  </a></td>
+
+            <td><a  href="/deletecourse/<%=item.id%>"> <img src="/delete.jpg " width="24" height="24"></a></td>
+
+            
+            </tr>
+            <% }) %>
+          </table>
+        
+          
+          
+          
+          
+          
+    
+    </body>
+    </html>

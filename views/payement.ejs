@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylePayement.css">
+</head>
+
+<body>
+	<nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fas fa-bars"></i>
+		</label>
+		<label class="logo">Payement</label>
+		<ul>
+			<li><a class="active" href="Accueil">Acceuil</a></li>
+			<li><a href="/service">Services</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/login">Admin</a></li>
+		</ul>
+	</nav>
+	<div class="tab">
+		<button class="tablinks" onclick="openCity(event, 'Credit Card')"id="defaultOpen">Credit Card</button>
+		<button class="tablinks" onclick="openCity(event, 'Debit Card')">Debit Card</button>
+		<button class="tablinks" onclick="openCity(event, 'Debit Card + ATM Pin')">Debit Card + ATM Pin</button>
+		<button class="tablinks" onclick="openCity(event, 'Internet Banking')">Internet Banking</button>
+		<button class="tablinks" onclick="openCity(event, 'Wallet/Cash Card')">Wallet/Cash Card</button>
+		<button class="tablinks" onclick="openCity(event, 'IMPS')">IMPS</button>
+	</div>	
+	
+	<div id="Credit Card" class="tabcontent">
+		<h3>Pay by Credit Card</h3>
+		<p>Card Number</p>
+		<input type="text" name="card" placeholder="Enter Card Number">
+	
+		<p>Expiration Date</p>
+		<input type="month" name="month" placeholder="Month">
+	
+		<p>CVV/CVC</p>
+		<input type="text" name="cvv">
+	
+		<p>Card Holder Name</p>
+		<input type="text" name="name" placeholder="Enter Card Holder Name">
+		
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</div>
+	
+	<div id="Debit Card" class="tabcontent">
+		<h3>Pay by Debit Card</h3>
+		<p>Card Number</p>
+		<input type="text" name="card" placeholder="Enter Card Number">
+	
+		<p>Expiration Date</p>
+		<input type="month" name="month" placeholder="Month">
+	
+		<p>CVV/CVC</p>
+		<input type="text" name="cvv">
+	
+		<p>Card Holder Name</p>
+		<input type="text" name="name" placeholder="Enter Card Holder Name">
+		
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</div>
+	
+	<div id="Debit Card + ATM Pin" class="tabcontent">
+		<h3>Pay by Debit Card + ATM Pin</h3>
+		<p>Card Number</p>
+		<input type="text" name="card" placeholder="Enter Card Number">
+	
+		<p>Expiration Date</p>
+		<input type="month" name="month" placeholder="Month">
+	
+		<p>CVV/CVC</p>
+		<input type="text" name="cvv">
+	
+		<p>Card Holder Name</p>
+		<input type="text" name="name" placeholder="Enter Card Holder Name">
+		
+		<p>Pin</p>
+		<input type="password" name="pwd" placeholder="Enter Pin">
+		
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</div>
+	
+	<div id="Internet Banking" class="tabcontent">
+		<h3>Pay by Internet Banking</h3>
+		<p>User ID</p>
+		<input type="text" name="userid">
+	
+		<p>ATM Pin/Password</p>
+		<input type="password" name="pwd">
+		
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</div>
+	
+	<div id="Wallet/Cash Card" class="tabcontent">
+		<h3>Pay by Wallet/Cash Card</h3>
+		<p>Card Number</p>
+		<input type="text" name="card" placeholder="Enter Card Number">
+	
+		<p>Pin</p>
+		<input type="password" name="pwd" placeholder="Enter Pin">
+		
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</div>
+	
+	<div id="IMPS" class="tabcontent">
+		<h3>Pay by IMPS</h3>
+		<p>Beneficiary Mobile Number</p>
+		<input type="text" name="mobile">
+	
+		<p>Beneficiary MMID</p>
+		<input type="text" name="mmid">
+	
+		<p>Amount</p>
+		<input type="text" name="amount">
+	
+		<p>Remarks</p>
+		<input type="text" name="remarks">
+		
+		<p>Transaction Password</p>
+		<input type="password" name="pwd">
+		
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</div>
+	
+	
+	<script>
+		function openCity(evt, mop) 
+		{
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) 
+			{
+				tabcontent[i].style.display = "none";
+			}
+		
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) 
+			{
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+		
+			document.getElementById(mop).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>
+		
+		
+</body>
+</html>

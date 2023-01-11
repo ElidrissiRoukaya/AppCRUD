@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+
+    <link rel="stylesheet" href="styleSGratuit.css">
+</head>
+<body>
+  <nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fas fa-bars"></i>
+		</label>
+		<label class="logo">La liste des Cours</label>
+		<ul>
+			<li><a class="active" href="Acceuil">Acceuil</a></li>
+			<li><a href="/service">Services</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/login">Admin</a></li>
+		</ul>
+	</nav>
+  
+    <table id="course">
+      <tr>
+     
+        <th>Professeur</th>
+        <th>Cours</th>
+        <th>Nmr de Chapitres</th>
+        <th>Telecharger</th>
+        
+       
+      </tr>
+      
+        <tr>
+
+          <% bdCourse.forEach((item)=>
+          { %>
+          
+          <td><%=item.Prof %></td>
+          <td><%=item.Cours %></td>
+          <td><%=item.NmrChapitre%></td>
+          <td><a href="#"><img src="/telecharger.png" width="24" height="24" ></a></td>
+         
+
+          
+          </tr>
+          <% }) %>
+        </table>
+
+
+</body>

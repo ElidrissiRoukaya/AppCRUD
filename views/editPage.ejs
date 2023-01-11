@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+ 
+  <style>
+  
+  nav {
+    background: #d10000;
+    height: 80px;
+    width: 100%;
+  }
+  label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+  nav ul {
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  a.active, a:hover {
+    background: #6d6a75;
+    transition: .5s;
+  }
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check {
+    display: none;
+  }
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn {
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #a8a3b8;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    a:hover, a.active {
+      background: none;
+      color: #d10000;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+  }
+  input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+      width: 100%;
+      background-color: #cf1010;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #000000;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  
+    
+</style>
+
+</head>
+<body>
+  <nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fas fa-bars"></i>
+		</label>
+		<label class="logo">Edit Page</label>
+		<ul>
+			
+			<li><a href="/admin" method="post">Page Admin</a></li>
+			<li><a href="/addC" method="post">Ajouter un cours</a></li>          
+			<li><a href="/Msg" >Boite de réception</a></li>
+
+		</ul>
+	</nav>
+  
+    <form action="/update/<%=cour.id %>" method="post">
+     
+    <label for="fname">Professeur</label>
+    <input type="text" id="Prof" name="Prof" value="<%=cour.Prof%>" placeholder="nom du prof.."  required="true">
+
+    <label for="lname">Cours</label>
+    <input type="text" id="Cours" name="Cours" value="<%=cour.Cours%>" placeholder="nom du cours.."  required="true">
+
+    <label for="type du cours">Nbr de chapitres</label>
+    <input type="text" id="NmrChapitre" name="NmrChapitre" value="<%=cour.NmrChapitre%>" placeholder="Nbr de chapitres"  required="true">
+  
+    <input type="submit" value="Envoyer la modification">
+       
+      </form>
+
+
+</body>

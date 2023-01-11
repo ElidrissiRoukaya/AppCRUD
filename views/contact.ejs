@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/styleCon.css" type="text/css" />
+
+</head>
+<body>
+  <div class="contactez-nous">
+    
+      
+    <h1>Contactez-nous</h1>
+    <p>Un problème, une question, envie de nous envoyer un message d’amour ? N’hésitez pas à utiliser ce formulaire pour prendre contact avec nous !</p>
+    <form action="/envoyerMsg" method="post">
+    <div>
+    <label for="nom">Votre nom</label>
+    <input type="text" id="nom" name="nom" placeholder="Martin" required>
+    </div>
+    <div>
+    <label for="email">Votre e-mail</label>
+    <input type="email" id="email" name="email" placeholder="monadresse@mail.com" required>
+    </div>
+    <div>
+    <label for="sujet">Quel est le sujet de votre message ?</label>
+    <select name="sujet" id="sujet" required>
+    <option value="" disabled selected hidden>Choisissez le sujet de votre message</option>
+    <option value="Question à propos de services">Question à propos de services</option>
+    <option value="Autre...">Autre...</option>
+    </select>
+    </div>
+    <div>
+    <label for="message">Votre message</label>
+    <textarea id="message" name="message" placeholder="Bonjour, je vous contacte car...." required></textarea>
+    </div>
+    <div>
+    <button type="submit">Envoyer mon message</button>
+    </div>
+    </form>
+    </div>
+   
+  </body>
